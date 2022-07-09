@@ -52,3 +52,43 @@ npm run build
 ```
 
 > **Notice:** Sail will need to be restarted following changes to the `.env` file.
+
+## Scripts and styles
+
+Out of the box, this application is design with the "islands architecture" in mind. Essentially, this means content will be server-rendered, with the ability to render portions of the page on the client. To create a script, add an entry to `vite.config.ts`.
+
+Once your entry point is registered, it can referenced using the script component.
+
+```html
+<x-script src="example.ts" />
+```
+
+In development, page styles will be referenced dynamically to allow for hot-module-replacement. In production, they will be referenced from a static css asset. This logic is handled using the `global` script, along with the `styles` component.
+
+```html
+<html>
+    <head>
+        <x-styles />
+    </head>
+    <body>
+        ...
+        <x-script src="global.ts" />
+    </body>
+</html>
+```
+
+The starter layout is already configured this way, but if you're adding additional page layouts this is something to be aware of.
+
+## Icons
+
+This application comes with support for [Lucide icons](https://lucide.dev/). To update the current icon set, execute the following.
+
+```bash
+php artisan app:lucide
+```
+
+Icons can be rendered by their `name`, along with optional `size` and `stroke-width` values.
+
+```html
+<x-icon name="rocket" />
+```
