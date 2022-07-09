@@ -1,5 +1,7 @@
 # `laravel-scaffold`
 
+[![Test](https://github.com/scottbedard/laravel-scaffold/actions/workflows/test.yml/badge.svg)](https://github.com/scottbedard/laravel-scaffold/actions/workflows/test.yml)
+
 This repo is an opinionated and minimal starting point for Laravel applications. It contains a handful of tools I enjoy, as well as a workflow for continuous-integration via GitHub actions. Pages for user authentication are also included to demonstrate end-to-end testing with database interactions.
 
 ## Features
